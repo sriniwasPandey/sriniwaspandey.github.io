@@ -808,7 +808,6 @@ STYLE SWITCHER FOR DEMO
 .btn.disabled, .btn:disabled {
   opacity: 0.65;
 }
-
 .btn:not(:disabled):not(.disabled):active, .btn:not(:disabled):not(.disabled).active {
   background-image: none;
 }
