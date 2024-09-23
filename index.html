@@ -1,541 +1,365 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Sriniwas Pandey</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="robots" content="all,follow">
-    <!-- Bootstrap CSS-->
-    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
-    <!-- Font Awesome CSS-->
-    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
-    <!-- Google fonts - Roboto + Roboto Slab-->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700%7CRoboto:400,700,300">
-    <!-- owl carousel-->
-    <link rel="stylesheet" href="vendor/owl.carousel/assets/owl.carousel.css">
-    <link rel="stylesheet" href="vendor/owl.carousel/assets/owl.theme.default.css">
-    <!-- animate.css-->
-    <link rel="stylesheet" href="vendor/animate.css/animate.css">
-    <!-- theme stylesheet-->
-    <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
-    <!-- Custom stylesheet - for your changes-->
-    <link rel="stylesheet" href="css/custom.css">
-    <!-- Leaflet CSS - For the map-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.css">
-    <!-- Favicon-->
-    <link rel="shortcut icon" href="img/name.jpg">
-    <!-- Tweaks for older IEs--><!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
-		<style>
-		#block_container {
-    display: flex;
-    justify-content: center;
-}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sriniwas Pandey - Academic Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          integrity="sha512-pVnH5lqVbVMi3lQJZV3E6E7sGsV5oYpMejOHc1Zq3mZGsIh0cI5BnYg74Y2l1dVYkzS3RkGHS7nq4T/U5qcvhw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <!-- Left Section: Profile Picture -->
+            <div class="header-left">
+                <img src="Pandey_Sriniwas-01.jpeg" alt="Sriniwas Pandey, Lecturer at Binghamton University" class="profile-pic">
+            </div>
 
+            <!-- Center Section: Name and Title -->
+            <div class="header-center">
+                <h1>Sriniwas Pandey</h1>
+                <p>Lecturer, Computer Science<br>Binghamton University</p>
+            </div>
 
-mark.red {
-    color:#ff0000;
-    background: none;
-}
-
-mark.blue {
-    color:#0000A0;
-    background: none;
-}
-mark.green {
-    color:#4FBFA8;
-    background: none;
-}
-		</style>
-  </head>
-  <body>
-    <!-- Reference item-->
-    <!-- navbar-->
-    <header class="header">
-      <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container"><a href="#intro" class="navbar-brand scrollTo">Sriniwas Pandey</a>
-          <button type="button" data-toggle="collapse" data-target="#navbarcollapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><span class="fa fa-bars"></span></button>
-          <div id="navbarcollapse" class="collapse navbar-collapse">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item"><a href="#intro" class="nav-link link-scroll">Intro</a></li>
-              <li class="nav-item"><a href="#about" class="nav-link link-scroll">About Me</a></li>
-              <li class="nav-item"><a href="#services" class="nav-link link-scroll">Education</a></li>
-              <li class="nav-item"><a href="#testimonials" class="nav-link link-scroll">Experience</a></li>
-              <li class="nav-item"><a href="#references" class="nav-link link-scroll">Projects</a></li>
-              <li class="nav-item"><a href="#publication" class="nav-link link-scroll">Publications</a></li>
-              <li class="nav-item"><a href="#contact" class="nav-link link-scroll">Contact</a></li>
-			  <li class="nav-item"><a href="img/Resume _Sriniwas_Pandey.pdf" target="_blank" download class="nav-link link-scroll"><b>CV</b></a></li>
-            </ul>
-          
-      </nav>
+            <!-- Right Section: Navigation Menu -->
+            <div class="header-right">
+                <nav>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#education">Education</a></li>
+                        <li><a href="#research">Research</a></li>
+                        <li><a href="#teaching">Teaching</a></li>
+                        <li><a href="#publications">Publications</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <!-- Dropdown Arrow for Submenu -->
+                        <li class="dropdown">
+                            <a href="#" class="dropbtn">
+                                More <i class="fas fa-caret-down"></i>
+                            </a>
+                            <div class="dropdown-content">
+                                <a href="#professional-engagements">Professional Engagements</a>
+                                <a href="#honors-awards">Honors & Awards</a>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
     </header>
-    <!-- Intro Image-->
-    <section id="intro" style="background: url(img/home.jpg) center center no-repeat; background-size: cover;" class="intro-section pb-2">
-      <div class="container text-center">
-        <h1 data-animate="fadeInDown" class="text-shadow mb-5">Hello, hola, नमस्ते !</h1>
-		<h1 data-animate="fadeInUp" class="text-shadow mb-5">
-		<mark class="green">I am <i>Sriniwas</i> </h1>
-		
 
-        <p data-animate="slideInUp" class="h3 text-shadow text-400">Doctoral Candidate @SUNY Binghamton, USA. </br>
-		<i><b>Advisor:</b> <a href="http://bingweb.binghamton.edu/~sayama/" target="_blank"> Dr. Hiroki Sayama </a></i></br>
-		A Researcher, Coder, Learner and Dreamer........ </p>	
-	  <p class="h3 text-shadow text-400"><a href="green/"  ><b>Switch to simple page </b></a></p>
-		  
+    <!-- Main Content -->
+    <main>
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container about-container">
+                <div class="about-me">
+                    <h2>About Me</h2>
+                    <div class="content-box">
+                        <p>
+                            I am Sriniwas Pandey, a dedicated Lecturer in Computer Science at Binghamton University. Holding a Ph.D. in Systems Science from Binghamton University, my research focuses on Complex Systems, Social Behavior Dynamics, and Computational Social Science.
+                        </p>
+                        <p>
+                            Balancing work and life is integral to my philosophy, which is reflected in both my research and teaching methodologies. I continuously strive for personal and professional growth, embracing evolution and adaptability.
+                        </p>
+                        <a href="Sriniwas_Pandey_Resume.pdf" class="btn-download" download>Download Resume</a>
+                    </div>
+                </div>
+                <div class="twitter-widget">
+                    <h2>From X</h2>
+                    <a class="twitter-timeline" href="https://twitter.com/solicitous_sri?ref_src=twsrc%5Etfw">Tweets by solicitous_sri</a> 
+                    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                </div>
+            </div>
+        </section>
 
-        </div>
-    </section>
-    <!-- About-->
-    <section id="about" class="about-section">
-      <div class="container">
-        <header class="text-center">
-          <h2 data-animate="fadeInDown" class="title">About me</h2>
-        </header>
-        <div class="row">
-          <div data-animate="fadeInUp" class="col-lg-6">
-            <p><div data-animate="fadeInUp" class="col-sm-4 mx-auto mt-4"><img src="img/profilephoto.jpg" alt="This is me - Sriniwas" class="image rounded-circle img-fluid"></div>
-</p>
-I see my self as an inquisitive person and a quick learner. I am adaptable, ebullient, calm, empathetic and prudent. I define myself, "a leader as a team player".
-</br></br>
-I, currently pursuing doctoral studies in Systems Science, have a Masters and a Bachelors degree in Computer Science. Machine Learning, Algorithm Analysis, Data Analytics and Complex Networks are some of research areas, I am primarily interested. My experiences include working in industry, research and academia. Working in the acedemia, I am enhancing my mentoring and organization skills.  I also worked as a research fellow for one of the prestigious institutes in India and a software developer in the IT industry.
-</br></br>
-Do not hesitate to contact me for more details and further discussions.  
+        <!-- Education, Research, Teaching Section -->
+        <section class="section">
+            <div class="container">
+                <div class="multi-section">
+                    <!-- Education Section -->
+                    <div id="education" class="collapsible-section">
+                        <h2>Education</h2>
+                        <div class="card toggle-card">
+                            <h3>Binghamton University, Binghamton, NY</h3>
+                            <p><strong>Ph.D., Systems Science</strong> (Completed: May 2023)</p>
+                            <p>Dissertation: <em>Emergence, Evolution, and Impact of Eccentric Ideas in Society</em></p>
+                            <p>Advisor: Prof. Hiroki Sayama</p>
+                        </div>
+                        <div class="card hidden">
+                            <h3>IIIT Jabalpur, Jabalpur, India</h3>
+                            <p><strong>M.Tech., Computer Science & Engineering</strong> (GPA: 9.4/10) (June 2015)</p>
+                            <p>Thesis: <em>Out-of-core and In-core Algorithms to Discover Clusters of Arbitrary Shapes, Different Sizes and Varying Densities</em></p>
+                            <p>Advisor: Prof. S. K. Mohanty</p>
+                        </div>
+                        <div class="card hidden">
+                            <h3>Uttarakhand Technical University, Dehradun, India</h3>
+                            <p><strong>B.Tech., Computer Science & Engineering</strong> (Score: 70/100) (June 2011)</p>
+                        </div>
+                    </div>
 
-</p>
-			</div>
-          <div data-animate="fadeInUp" class="col-lg-6">
-		  			<p><i><b>"Sriniwas has a wonderful rapport with people of all ages, especially students. He is extremely organized and reliable. He can work independently and is able to follow through to ensure that the job gets done. He is a dependable, mature, and great supporter."</b></br> -Dr Sraban Kr Mohanty (Former Supervisor and Professor)</i></br>
+                    <!-- Research Section -->
+                    <div id="research" class="collapsible-section">
+                        <h2>Research</h2>
+                        <div class="card toggle-card">
+                            <h3>Binghamton University (2022-2023)</h3>
+                            <p>Graduate Research Assistant, Binghamton Center of Complex Systems</p>
+                            <ul>
+                                <li>Investigated the generation and impact of ideas within social networks, emphasizing the conventionality of opinions.</li>
+                                <li>Analyzed the influence of social recommendation systems on human traits and opinion dynamics.</li>
+                            </ul>
+                        </div>
+                        <div class="card hidden">
+                            <h3>IIT Guwahati (2015-2016)</h3>
+                            <p>Research Fellow, Computer Science & Engineering</p>
+                            <ul>
+                                <li>Developed a robust toolkit for mining and parsing large-scale Wikipedia datasets in offline environments.</li>
+                            </ul>
+                        </div>
+                        <div class="card hidden">
+                            <h3>Center for Development of Advanced Computing, Pune, India (Summer 2016)</h3>
+                            <p>Research Intern, High Performance Computing</p>
+                            <ul>
+                                <li>Applied high-performance computing tools such as OpenMP, CUDA, and MPI to enhance data mining processes.</li>
+                                <li>Implemented OpenMP constructs to efficiently mine Wikipedia dumps.</li>
+                            </ul>
+                        </div>
+                    </div>
 
-            <div class="skill-item">
-              <div class="progress-title">Machine Learning</div>
-              <div class="progress">
-                <div role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" class="progress-bar progress-bar-skill1"></div>
-              </div>
-            </div>
-			<div class="skill-item">
-              <div class="progress-title">Data Analysis</div>
-              <div class="progress">
-                <div role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" class="progress-bar progress-bar-skill5"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="progress-title">Algorithm Analysis</div>
-              <div class="progress">
-                <div role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" class="progress-bar progress-bar-skill2"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="progress-title">Programming (Python, R, JAVA, C)</div>
-              <div class="progress">
-                <div role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" class="progress-bar progress-bar-skill3"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="progress-title">Database</div>
-              <div class="progress">
-                <div role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" class="progress-bar progress-bar-skill4"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="progress-title">SPSS,SAS</div>
-              <div class="progress">
-                <div role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" class="progress-bar progress-bar-skill3"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Service-->
-    <section id="services" class="bg-gradient services-section">
-      <div class="container">
-        <header class="text-center">
-          <h2 data-animate="fadeInDown" class="title">Education</h2>
-		  <div class="icon"><i class="fa fa-graduation-cap"></i></div>
-        </header>
-        <div class="row services text-center">
-          <div data-animate="fadeInUp" class="col-lg-4">
-            
-            <h3 class="heading mb-3 text-400">Ph.D, Systems Science</h3>
-			<h4 class="heading mb-3 text-400">August 2018 - Present</h4>
-			<h4 class="heading mb-3 text-400">CGPA: 4/4</h4>
-			<h4 class="heading mb-3 text-400">State University of New York at Binghamton, New York</h4>
-            
-          </div>
-          <div data-animate="fadeInUp" class="col-lg-4">
-            <h3 class="heading mb-3 text-400">Masters (M.Tech), Computer Science and Engineering</h3>
-			<h4 class="heading mb-3 text-400">July 2013 - July 2015</h4>
-			<h4 class="heading mb-3 text-400">CGPA: 4/4</h4>
-			<h4 class="heading mb-3 text-400">IIIT DM, Jabalpur India</h4>
-			</div>
-          <div data-animate="fadeInUp" class="col-lg-4">
-           <h3 class="heading mb-3 text-400">Bachelors (B.Tech), Computer Science and Engineering</h3>
-			<h4 class="heading mb-3 text-400">July 2007 - June 2011</h4>
-			<h4 class="heading mb-3 text-400">CGPA: 70/100</h4>
-			<h4 class="heading mb-3 text-400">Uttarakhand Technical University, India</h4> </div>
-        </div>
-        <hr data-animate="fadeInUp">
-        <div data-animate="fadeInUp" class="text-center">
-          <p class="lead">Would you like to know more or just discuss something?</p>
-          <p><a href="#contact" class="btn btn-outline-light link-scroll">Contact me</a></p>
-        </div>
-      </div>
-    </section>
-    <!-- Testimonials-->
-    <section id="testimonials" class="testimonials-section bg-gray">
-      <div class="container">
-        <header class="text-center mb-2">
-          <h2 data-animate="fadeInUp" class="title">Professional Experience</h2>
-          <p data-animate="fadeInUp" class="lead">I have experience in Software development, Research and Academia.</p>
-        </header>
-        <ul data-animate="fadeInUp" class="owl-carousel owl-theme testimonials equalize-height">
-          <li class="item">
-            <div >
-			<div>
-				<center>
-                  <h5>Teaching Assistant</h5>
-                  <h6>SUNY Binghamton</h6>
-				  <h6>August 2018 - Present</h6>
-				  </center>
+                    <!-- Teaching Section -->
+                    <div id="teaching" class="collapsible-section">
+                        <h2>Teaching</h2>
+                        <div class="card toggle-card">
+                            <h3>Binghamton University (August 2023 - Present)</h3>
+                            <p>Lecturer, Computer Science</p>
+                            <ul>
+                                <li>Designed and developed syllabi and lecture materials for graduate-level courses including Python and Data Mining, Object-Oriented Design with Design Patterns, Data Analytics for Security, and Introduction to Machine Learning.</li>
+                                <li>Delivered engaging lectures, facilitated tutorial sessions, administered assessments, and conducted comprehensive evaluations of student learning across classes of 50-70 students.</li>
+                            </ul>
+                        </div>
+                        <div class="card hidden">
+                            <h3>Uttarakhand Technical University (Dec 2017 - July 2018)</h3>
+                            <p>Assistant Professor, Computer Science & Engineering</p>
+                            <ul>
+                                <li>Taught undergraduate courses in Operating Systems, Object-Oriented Programming, and Web Programming.</li>
+                                <li>Organized and led workshops and seminars to enhance student learning and engagement.</li>
+                                <li>Provided mentorship and guidance on minor and final projects, supporting students through their academic and practical challenges.</li>
+                            </ul>
+                        </div>
+                        <div class="card hidden">
+                            <h3>Indian Institute of Information Technology DM, Jabalpur, India (July 2013 - May 2015)</h3>
+                            <p>Teaching Assistant, Computer Science and Engineering</p>
+                            <ul>
+                                <li>Conducted laboratory sessions for undergraduate courses on Introduction to Programming with C and Object-Oriented Programming.</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="text"><justify>
-                <p>Courses: Computational Tools and Enterprise Systems Engineering
-				Duties include:
-				• Delivering lectures,
-				• Evaluation and grading
-				• Maintaining student records
-				• Assisting students in their academic endeavors</p></justify>
-              </div>        
-          
-          </li>
-		   <li class="item">
-            <div >
-			<div>
-				<center>
-                  <h5>Assistant Professor (Computer Science department)</h5>
-                  <h6>NPSEI Uttarakhand Technical University India</h6>
-				  <h6>Dec 2017 - Aug 2018</h6></center>
-                </div>
-              </div>
-              <div class="text">
-			  <justify>
-                <p>Courses: Operating Systems, Database management
-				Duties include:
-				• Preparing and delivering lectures
-				• Conducting exams and seminars
-				• Project Supervision
-				• In-charge of Computer Science department laboratories</p></justify>
-              </div>        
-          
-          </li>
-		  <li class="item">
-            <div >
-			<div>
-                  <center><h5>Research Fellow</h5>
-                  <h6>IIT Guwahati, India</h6>
-				  <h6>Jul 2015 - Dec 2016</h6></center>
-                </div>
-              </div>
-              <div class="text">
-			  <justify>
-                <p>Developed a Wikipedia mining toolkit and worked on a project on wikidata analysis
-					• Worked as Teaching Assistant for courses Data Mining & Introduction to programming</p></justify>
-              </div>        
-          
-          </li>
-		  <li class="item">
-            <div >
-			<div>
-                  <center><h5>Research Intern </h5>
-                  <h6>(C-DAC) (a premier R&D organization of Govt. of India)</h6>
-				  <h6>Summer 2016</h6></center>
-                </div>
-              </div>
-              <div class="text">
-			  <justify>
-                <p>• Application of High-performance computing tools like (openMP, CUDA, MPI) in data mining.
-• Applied openMP constructs in Wikipedia mining.</p></justify>
-              </div>        
-          
-          </li>
-		  <li class="item">
-            <div >
-			<div>
-                  <center><h5>Systems Engineer</h5>
-                  <h6>Infosys Limited, India</h6>
-				  <h6>Feb 2012 - Jul 2013</h6></center>
-                </div>
-              </div>
-              <div class="text">
-			  <justify>
-                <p>• Java application development using J2EE techniques like Java-Spring and Hibernate.
-• Application development for android platform for an insurance organization</p></justify>
-              </div>        
-          
-          </li>
-        </ul>
-      </div>
-    
-    <!--
-    *** REFERENCES IMAGE ***
-    _________________________________________________________
-    -->
-	
-	<section id="references" class="testimonials-section bg-gray">
-      <div class="container">
-        <header class="text-center mb-2">
-          <h2 data-animate="fadeInUp" class="title">Projects</h2>
-        </header>
-        <ul data-animate="fadeInUp" class="owl-carousel owl-theme testimonials equalize-height">
-		  <li class="item">
-            <div >
-			<div class="overlay">
-                          <div class="inner">
-                            <h3 class="h4 reference-title">Analysing relation between 'Eccentricity' and amount of attention for GAB users</h3>
-                            <h6>June 2020 - Current</h6>
-                          </div>
-                        </div>
-              <div class="text"><justify>
-                <p><b>Objective</b>: Quantify Eccentricity for each post based on the neighbors of the post-author and find the relation of eccentricity and the attention the post receives</p>
-				  <p><b>Technology:</b> Doc2Vec, Principal Component Analysis, Clustering </p>
-					<p><b>Outcome:</b> There is a trend of getting more likes with increasing eccentricity.</p></justify>
-              </div>        
-          </li>
-		  <li class="item">
-            <div >
-			<div class="overlay">
-                          <div class="inner">
-                            <h3 class="h4 reference-title">Dynamics of user eccentricity in GAB social network</h3>
-                            <h6>June 2020 - Dec 2020</h6>
-                          </div>
-                        </div>
-              <div class="text"><justify>
-                <p><b>Objective</b>: Tracking users' eccentricity over time and classifying users based on the pattern of change in the eccentricity with time.</p>
-				  <p><b>Technology:</b> Doc2Vec, Principal Component Analysis, Clustering </p>
-					<p><b>Outcome:</b> Most of the users who remain consistent in terms of the eccentricity in their neighborhood, actually become more eccentric with time in terms of their own opinions. </p></justify>
-              </div>        
-          </li>
-		  <li class="item">
-            <div >
-			<div class="overlay">
-                          <div class="inner">
-                            <h3 class="h4 reference-title">Impact of neighborhood and nature of task on eccentricity</h3>
-                            <h6>June 2020 - Dec 2020</h6>
-                          </div>
-                        </div>
-              <div class="text"><justify>
-                <p><b>Objective</b>: Analyze how eccentricity of our opinion is related with our neighbors and the topic of discussion. Experiments were conducted with the university students to collect data for two different tasks. </p>
-				  <p><b>Technology:</b> Doc2Vec, Principal Component Analysis, Clustering </p>
-					<p><b>Outcome:</b> Low-collaborative tasks generate more eccentric ideas as compared to high-collaborative tasks. Another finding was that the groups with disperse background generate less eccentric ideas. </p></justify>
-              </div>        
-          </li>
-          <li class="item">
-            <div >
-			<div class="overlay">
-                          <div class="inner">
-                            <h3 class="h4 reference-title">Mortality Rate Analysis in USA</h3>
-                            <h6>Sep 2018- Dec 2018</h6>
-                          </div>
-                        </div>
-              <div class="text"><justify>
-                <p><b>Objective</b>: Form clusters of demographic areas according to the mortality rate and various diseases.</p>
-				  <p><b>Technology:</b> Principal Component Analysis and Clustering</p>
-					<p><b>Outcome:</b> Clusters of counties based on mortality rate and disease that can be used to form policies</p></justify>
-              </div>        
-          </li>
-		  <li class="item">
-            <div >
-			<div class="overlay">
-                          <div class="inner">
-                            <h3 class="h4 reference-title">Mining interesting patterns in Indian Language Wikipedia's edit histories</h3>
-                            <h6>July 2015 - December 2016</h6>
-                          </div>
-                        </div>
-              <div class="text"><justify>
-                <p><b>Objective</b>: Find interesting patterns in Indian languages Wikipedia edition edit histories.</p>
-				  <p><b>Technology:</b> Hadoop - MapReduce with Java.</p>
-					<p><b>Outcome:</b> Identified some interesting editor behavior patterns for Hindi, Marathi, Telugu Wikipedia editions</p></justify>
-              </div>        
-          </li>
-		  <li class="item">
-            <div >
-			<div class="overlay">
-                          <div class="inner">
-                            <h3 class="h4 reference-title">Scalable Efficient Clustering methods for Large Data</h3>
-                            <h6>Jul 2013 - Jun 2015</h6>
-                          </div>
-                        </div>
-              <div class="text"><justify>
-                <p><b>Objective</b>: Adapt the existing algorithms for large data without changing the core functionality and methodology of the algorithms.</p>
-				  <p><b>Technology:</b> External Memory model, C++, STXXL</p>
-					<p><b>Outcome:</b> Designed a clustering algorithm for large datasets.</p></justify>
-              </div>        
-          </li>
-		   <li class="item">
-            <div >
-			<div class="overlay">
-                          <div class="inner">
-                            <h3 class="h4 reference-title">Shared Near Neighbour Clustering algorithm based on Random walk model</h3>
-                            <h6>Jul 2013 - Jun 2015</h6>
-                          </div>
-                        </div>
-              <div class="text"><justify>
-                <p><b>Objective</b>: Design a new effective clustering algorithm with least restrictions on the shape, size, density and type of data.</p>
-				  <p><b>Technology:</b> Python, Random walk model</p>
-					<p><b>Outcome:</b> Developed a new algorithm that combines concept of random walk with shared near neighbor technique.</p></justify>
-              </div>        
-          </li>
-        </ul>
-      </div>
-    </section>
-    
-    <!-- Customers-->
-    <section id="publication" class="customers-section bg-gray">
-	
-      <div class="container">
-	  <header class="text-center">
-          <h2 class="title">Presentations and Publication(s)</h2>
-        </header>
-        <ul>
-		<li><i class="fa-li fa fa-check-square"></i>
-		<p><mark class="blue">[Presentation]</mark> <b>Sriniwas Pandey</b> and Hiroki Sayama, Dynamics of user eccentricity on GAB social media, presented as a talk at the 2021 Conference on Complex Systems (CCS 2021), October 25-29, 2021, Lyon, France / online.</p>
-		</li>
-		<li><i class="fa-li fa fa-check-square"></i>
+            </div>
+        </section>
 
-		 <p><mark class="blue">[Presentation]</mark> <b>Sriniwas Pandey</b> and Hiroki Sayama, Analyzing eccentric behavior of GAB social media users, presented as a poster (interactive presentation) at NERCCS 2021: Fourth Northeast Regional Conference on Complex Systems, March 31-April 2, 2021, conference held online</p>
-		</li>
-		<li><i class="fa-li fa fa-check-square"></i>
-		<p><b>Pandey Sriniwas</b>, Pankaj Kumar Y., Samal M., Sraban Kumar M. (2019) Nearest Neighbor-Based Clustering Algorithm for Large Data Sets. 
-		Advances in Computer Communication and Computational Sciences. Advances in Intelligent Systems and Computing, vol 760. Springer, Singapore</p>
-		
-		</li>
-		<li><i class="fa-li fa fa-check-square"></i>
-		<p>
-		<b>Pandey Sriniwas</b>, Samal M., Mohanty S.K. (2020) An SNN-DBSCAN Based Clustering Algorithm for Big Data. In: Pati B., Panigrahi C., Buyya R., Li KC. (eds) 
-		Advanced Computing and Intelligent Engineering. Advances in Intelligent Systems and Computing, vol 1082. Springer, Singapore. </p>
-		</li>
-		</ul>
-      </div>
-    </section>
-	<section id="twitterTL" class="customers-section bg-gray">
-		  
-		  </section>
-	</section>
-    <!-- Statistics-->
-    <section id="statistics" data-dir="up" style="background: url(&quot;img/parallax.jpg&quot;);" class="statistics-section text-white parallax parallax">
-      <div class="container">
-	  <header class="text-center">
-	  <h2  style="color:white;">Some (NOT) <s>(ir)</s>relevant things I do</h2>
-        </header>
-        <div class="row showcase text-center"> 
-		
-		<div  class="col-lg-3 col-md-6">
-            <div class="item">
-				<div class="col-sm-4 mx-auto mt-4" ><img src="img/rwemerson1859.jpg" alt="This is me - Sriniwas" class="image img-thumbnail img-fluid"></div>
-				
-				<mark class="green"><br><i>“The purpose of life is not to be happy. It is to be useful, to be honorable, to be compassionate, to have it make some difference that you have lived and lived well.” </br>
-						- Ralph Waldo Emerson</i></mark>
-			</div>
-		</div>
-          
-          <div  class="col-lg-3 col-md-6">
-            <div class="item">
-              <!--<div class="icon"><i class="fa fa-camera-retro"></i></div>-->
-			  <div ><img src="img/photography.jpg" width="200" height="250" alt="This is me - Sriniwas" class="rounded-circle"></div>
-              <h5 class="text-400 mt-3 text-uppercase"><br><a href="https://www.instagram.com/sriniwaspande_y/" target="_blank">Photography</a></h5>
+        <!-- Publications Section -->
+        <section id="publications" class="section">
+            <div class="container">
+                <h2>Publications</h2>
+                <ul>
+                    <li>Sriniwas Pandey and Hiroki Sayama, "Effect of recommending users and opinions on the network connectivity and idea generation process," Northeast Journal of Complex Systems, 6(1), Article 1. <a href="#">Available online Preprint</a></li>
+                    <li>Sriniwas Pandey, Yiding Cao, Yingjun Dong, Minjun Kim, Neil G. MacLaren, Shelley D. Dionne, Francis J. Yammarino, and Hiroki Sayama, "Generation and influence of eccentric ideas on social networks," Scientific Reports, 13, 20433, 2023. <a href="#">Available online Preprint</a></li>
+                    <li>Sriniwas Pandey and Hiroki Sayama, "Characterizing controversiality of topics utilizing eccentricity of opinions," Northeast Journal of Complex Systems, 5(1), 2, 2023. <a href="#">Available online</a></li>
+                    <li>Yiding Cao, Yingjun Dong, Minjun Kim, Neil G. MacLaren, Sriniwas Pandey, Shelley D. Dionne, Francis J. Yammarino, and Hiroki Sayama, "Visualizing collective idea generation and innovation processes in social networks," IEEE Transactions on Computational Social Systems, 10(5), 2234-2243, 2023. <a href="#">Abstract/PDF Preprint</a></li>
+                    <li>[Preprint] Yiding Cao, Yingjun Dong, Minjun Kim, Neil G. MacLaren, Sriniwas Pandey, Shelley D. Dionne, Francis J. Yammarino, and Hiroki Sayama, "Effects of network connectivity and functional diversity distribution on human collective ideation." Preprint</li>
+                    <li>Sriniwas Pandey, Mamta Samal, Sraban Mohanty, "An SNN-DBSCAN Based Clustering Algorithm for Big Data," Advanced Computing and Intelligent Engineering. Advances in Intelligent Systems and Computing, vol 1082. Springer, Singapore 2020.</li>
+                    <li>Sriniwas Pandey, Pankaj Kumar Yadav, Mamta Samal, Sraban Mohanty, "Nearest Neighbor-Based Clustering Algorithm for Large Data Sets," Advances in Computer Communication and Computational Sciences. Advances in Intelligent Systems and Computing, vol 760. Springer, Singapore 2019.</li>
+                </ul>
             </div>
-          </div>
-          <div  class="col-lg-3 col-md-6">
-            <div class="item">
-			<div ><img src="img/poetry.jpg" width="200" height="250" alt="This is me - Sriniwas" class="rounded-circle"	></div>
-              <h5 class="text-400 mt-3 text-uppercase"><br><a href="http://do-chaar.blogspot.com/" target="_blank">Poetry Writing</a></h5>
-            </div>
-          </div>
-          
-           <div class="col-lg-3 col-md-6">
-            <div class="item">
-              <a class="twitter-timeline" data-width="400" data-height="300" data-theme="dark" href="https://twitter.com/solicitous_sri?ref_src=twsrc%5Etfw">Tweets by solicitous_sri</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-          </div>
-        </div>
-      </div>
-      <div class="dark-mask"></div>
-    </section>
-    <!-- Contact-->
-    <section id="contact" data-animate="bounceIn" class="contact-section contact">
-	   
-      <div class="container" width=45% horizonal-align="right">
-        <header class="text-center">
-          <h2 class="title">Contact me</h2>
-        </header>
-        <div class="row">
-          <div class="col-lg-8 mx-auto">
-            <form id="contact-form" method="post" action="mailto:spandey4@binghamton.edu" enctype="text/plain">
-              <div class="messages"></div>
-              <div class="controls">
-                <div class="row">
-                  <div class="col-md-6">
-                    <input type="text" name="name" placeholder="Your firstname *" required="required" class="form-control">
-                  </div>
-                  <div class="col-md-6">
-                    <input type="text" name="surname" placeholder="Your lastname *" required="required" class="form-control">
-                  </div>
-                  <div class="col-md-6">
-                    <input type="text" name="email" placeholder="Your email *" required="required" class="form-control">
-                  </div>
-                  <div class="col-md-6">
-                    <input type="text" name="phone" placeholder="Your phone" class="form-control">
-                  </div>
-                  <div class="col-md-12">
-                    <textarea name="message" placeholder="Message for me *" rows="4" required="required" class="form-control"></textarea>
-                  </div>
-                  <div class="col-md-12 text-center">
-                    <button type="submit" class="btn btn-outline-primary">Send message</button>
-                  </div>
+        </section>
+
+        <!-- Professional Engagements, Professional Experience, Honors & Awards Sections -->
+        <section class="section bg-light">
+            <div class="container">
+                <div class="professional-engagements-container">
+                    <!-- Professional Engagements Section -->
+                    <div id="professional-engagements" class="sub-section">
+                        <h2>Professional Engagements</h2>
+                        <ul>
+                            <li>Faculty Search Committee MSIS, Binghamton University (2023-2024)</li>
+                            <li>Organizing Committee, NERCCS 2025 (2024-2025)</li>
+                        </ul>
+                    </div>
+
+                    <!-- Professional Experience Section -->
+                    <div id="professional-experience" class="sub-section">
+                        <h2>Professional Experience</h2>
+                        <ul>
+                            <li>Infosys Limited, Hyderabad, India - Systems Engineer, JAVA and Android (Feb 2012 – July 2013)</li>
+                            <li>Other relevant professional experiences can be listed here.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Honors & Awards Section -->
+                    <div id="honors-awards" class="sub-section">
+                        <h2>Honors & Awards</h2>
+                        <ul>
+                            <li>Conference on Complex Systems (CCS) student grant (2022)</li>
+                            <li>Klir Scholarship for Graduate Excellence in Systems Science, Binghamton University (2020 - 2021)</li>
+                            <li>Ministry of Human Resource and Development (MHRD), Govt of India Fellowship (2013 - 2015, 2015 - 2016)</li>
+                        </ul>
+                    </div>
                 </div>
-              </div>
-            </form>
-          </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+            <div class="container">
+                <h2>Skills</h2>
+                <div class="skills-container">
+                    <!-- Programming Languages -->
+                    <div class="skill">
+                        <h3>Programming Languages</h3>
+                        <p>Python, Java, C++, JavaScript, SQL, HTML/CSS</p>
+                    </div>
+                    <!-- Languages -->
+                    <div class="skill">
+                        <h3>Languages</h3>
+                        <p>English (Fluent), Hindi (Native)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+<section id="contact" class="section bg-light">
+    <div class="container">
+        <h2>Contact</h2>
+        <div class="contact-info">
+            <p><i class="fas fa-map-marker-alt"></i> </p>
+            <p>School of Computing</p>
+            <p>Thomas J. Watson College of Engineering and Applied Science</p>
+            <p>Binghamton University, State University of New York</p>
+            <p>P.O. Box 6000, Binghamton, NY 13902-6000, USA</p>
+            <p><i class="fas fa-phone-alt"></i> Phone: (607) 777-4802</p>
+            <p><i class="fas fa-envelope"></i> Email: <a href="">spandey4 AT binghamton DOT edu</a></p>
+            <p><i class="fab fa-linkedin"></i> LinkedIn: <a href="https://www.linkedin.com/in/sriniwas-pandey/" target="_blank">View Profile</a></p>
+            <a href="mailto:spandey4@binghamton.edu" class="btn-contact">Get in Touch</a> <!-- Optional button -->
         </div>
-      </div>
-	   
-    </section>
-    <!-- Map-->
-	
-		
-	<div class="mapouter"><div class="gmap_canvas"><iframe width="100%" height="333" id="gmap_canvas" src="https://maps.google.com/maps?q=binghamton%20university&t=&z=11&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.pureblack.de"></a></div><style>.mapouter{position:relative;text-align:right;height:333px;width:100%;}.gmap_canvas {overflow:hidden;background:none!important;height:333px;width:100%;}</style></div>    <footer class="main-footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 text-center text-lg-left">
-            <p class="social"><a href="https://www.facebook.com/snp.sriniwas" target="_blank" class="external facebook wow fadeInUp"><i class="fa fa-facebook"></i></a>
-			<a href="https://www.instagram.com/sriniwaspande_y/" data-wow-delay="0.2s" target="_blank" class="external instagram wow fadeInUp"><i class="fa fa-instagram"></i></a>
-			<a href="https://twitter.com/snp08" data-wow-delay="0.6s" class="twitter wow fadeInUp" target="_blank"><i class="fa fa-twitter"></i>
-			<a href="https://www.linkedin.com/in/sriniwas-pandey-63aa3737/" target="_blank" class="external linkedin wow fadeInUp"><i class="fa fa-linkedin"></i></a>
-			</a></p>
-          </div>
-          <!-- /.6-->
-		  
-          <div class="col-md-6 text-center text-lg-right mt-4 mt-lg-0">
-            <p>© 2019 Sriniwas Pandey. All rights reserved.</p>
-          </div>
-          <div class="col-12 mt-4">
-            <p class="template-bootstrapious">Template by <a href='https://bootstrapious.com/p/bootstrap-carousel'>Bootstrapious</a> & <a href="https://fity.cz/ostrava">Fity</a></p>
-            <!-- Please do not remove the backlink to us unless you support further theme's development at https://bootstrapious.com/donate. It is part of the license conditions. Thank you for understanding :)-->
-          </div>
+    </div>
+</section>
+
+        <!-- Back to Top Button -->
+        <a href="#" class="back-to-top"><i class="fas fa-chevron-up"></i></a>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Sriniwas Pandey. All rights reserved.</p>
+            <a href="#" class="back-to-top"><i class="fas fa-chevron-up"></i></a>
         </div>
-      </div>
     </footer>
-    <!-- JavaScript files-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
-    <script src="vendor/owl.carousel/owl.carousel.min.js"></script>
-    <script src="vendor/waypoints/lib/jquery.waypoints.min.js"></script>
-    <script src="vendor/jquery.counterup/jquery.counterup.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.js"> </script>
-    <script src="js/front.js"></script>
-  </body>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Dropdown Menu Functionality
+            const dropdowns = document.querySelectorAll('.dropdown');
+
+            dropdowns.forEach(dropdown => {
+                const dropbtn = dropdown.querySelector('.dropbtn');
+                const dropdownContent = dropdown.querySelector('.dropdown-content');
+
+                // Toggle dropdown on click
+                dropbtn.addEventListener('click', function(event) {
+                    event.preventDefault(); // Prevent default link behavior
+                    dropdownContent.classList.toggle('show');
+                });
+            });
+
+            // Close the dropdown if the user clicks outside of it
+            window.addEventListener('click', function(event) {
+                dropdowns.forEach(dropdown => {
+                    if (!dropdown.contains(event.target)) {
+                        const dropdownContent = dropdown.querySelector('.dropdown-content');
+                        dropdownContent.classList.remove('show');
+                    }
+                });
+            });
+
+            // Collapsible Sections Functionality
+            const toggleCards = document.querySelectorAll('.toggle-card');
+
+            toggleCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    const parentSection = this.parentElement;
+                    const hiddenCards = parentSection.querySelectorAll('.hidden');
+
+                    // Toggle visibility of hidden cards
+                    hiddenCards.forEach(hiddenCard => {
+                        hiddenCard.classList.toggle('hidden');
+                    });
+
+                    // Optional: Toggle an 'active' class for styling
+                    this.classList.toggle('active');
+                });
+            });
+
+            // Smooth Scroll Adjustment
+            const navLinks = document.querySelectorAll('nav ul li a[href^="#"]');
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault(); // Prevent default anchor behavior
+
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+
+                    if (targetSection) {
+                        const headerOffset = document.querySelector('header').offsetHeight;
+                        const elementPosition = targetSection.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset + 10; // Added slight padding
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+
+                        // Close any open dropdowns after clicking a link
+                        dropdowns.forEach(dropdown => {
+                            const dropdownContent = dropdown.querySelector('.dropdown-content');
+                            dropdownContent.classList.remove('show');
+                        });
+                    }
+                });
+            });
+
+            // Back to Top Button Functionality
+            const backToTopButtons = document.querySelectorAll('.back-to-top');
+
+            window.addEventListener('scroll', function() {
+                backToTopButtons.forEach(button => {
+                    if (window.pageYOffset > 300) { // Show after scrolling down 300px
+                        button.style.display = 'block';
+                    } else {
+                        button.style.display = 'none';
+                    }
+                });
+            });
+
+            backToTopButtons.forEach(button => {
+                button.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
 </html>
