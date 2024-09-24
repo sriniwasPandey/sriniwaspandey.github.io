@@ -87,8 +87,35 @@ header {
 
 /* Right Section: Navigation Menu */
 .header-right {
-    flex: 0 0 300px; /* Adjust width as needed */
-	align-self: flex-end; /* Add this line */
+    flex: 0 0 auto;
+    align-self: flex-end;
+    position: relative;
+}
+
+/* Menu Toggle Button */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #333;
+}
+
+/* Show the menu toggle button on mobile */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Hide the nav by default */
+    nav {
+        width: 100%;
+    }
+}
+
+nav {
+    position: relative;
 }
 
 nav ul {
@@ -96,6 +123,8 @@ nav ul {
     display: flex;
     justify-content: flex-end;
     gap: 20px;
+    align-items: center;
+    transition: max-height 0.3s ease-in-out;
 }
 
 nav ul li {
@@ -407,7 +436,6 @@ nav ul li a:hover {
     gap: 8px;
     font-size: 1em; /* Slightly larger text */
     color: #333;
-
 }
 
 .contact-info p i {
@@ -441,6 +469,7 @@ nav ul li a:hover {
 .contact-info .btn-contact:hover {
     background-color: #0056b3;
 }
+
 /* ========================================
    4. BACK TO TOP BUTTON STYLES
    ======================================== */
@@ -508,23 +537,23 @@ footer .back-to-top:hover {
 @media (max-width: 1024px) {
     .header-container {
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
     }
 
     .header-left,
     .header-right {
-        flex: 0 0 auto;
+        width: 100%;
     }
 
     .header-center {
-        text-align: center;
+        text-align: left;
         margin: 10px 0;
     }
 
     nav ul {
         flex-direction: column;
         gap: 10px;
-        align-items: center;
+        align-items: flex-start;
     }
 
     .about-container,
@@ -551,30 +580,65 @@ footer .back-to-top:hover {
 
 /* Mobile Devices */
 @media (max-width: 768px) {
-    .header-center h1 {
-        font-size: 1.5em;
-        white-space: normal;
+    /* Hide the menu */
+    nav ul {
+        flex-direction: column;
+        max-height: 0;
+        overflow: hidden;
     }
 
-    .profile-pic {
-        width: 80px;
-        height: 80px;
+    /* Show the menu when nav-open class is added */
+    nav.nav-open ul {
+        max-height: 500px; /* Adjust as needed */
     }
 
+    /* Adjust header layout */
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header-left,
     .header-right {
         width: 100%;
     }
 
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
-        align-items: center;
+    .header-center {
+        text-align: left;
+        margin: 10px 0;
     }
 
-    /* Adjust dropdown positioning */
+    /* Adjust profile picture size */
+    .profile-pic {
+        width: 100px;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    /* Adjust nav styles */
+    nav ul {
+        width: 100%;
+    }
+
+    nav ul li a {
+        width: 100%;
+        padding: 15px;
+        box-sizing: border-box;
+    }
+
+    /* Adjust dropdown content */
     .dropdown-content {
-        right: 0;
-        left: auto;
+        position: static;
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+    .dropdown-content a {
+        padding-left: 30px;
+    }
+
+    .dropdown .dropbtn {
+        width: 100%;
     }
 
     /* Ensure caret is visible */
@@ -582,6 +646,7 @@ footer .back-to-top:hover {
         color: #333;
     }
 
+    /* Adjust collapsible sections */
     .collapsible-section {
         width: 100%;
     }

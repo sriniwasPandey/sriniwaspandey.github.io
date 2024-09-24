@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Head content -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sriniwas Pandey - Academic Portfolio</title>
@@ -29,6 +30,11 @@
 
             <!-- Right Section: Navigation Menu -->
             <div class="header-right">
+                <!-- Mobile Menu Toggle Button -->
+                <button class="menu-toggle" aria-label="Open Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+
                 <nav>
                     <ul>
                         <li><a href="#about">About</a></li>
@@ -37,7 +43,7 @@
                         <li><a href="#teaching">Teaching</a></li>
                         <li><a href="#publications">Publications</a></li>
                         <li><a href="#contact">Contact</a></li>
-                        <!-- Dropdown Arrow for Submenu -->
+                        <!-- Dropdown Menu for Submenu -->
                         <li class="dropdown">
                             <a href="#" class="dropbtn">
                                 More <i class="fas fa-caret-down"></i>
@@ -66,11 +72,7 @@
                         </p>
                         <p>
                             Balancing work and life is integral to my philosophy, which is reflected in both my research and teaching methodologies. I continuously strive for personal and professional growth, embracing evolution and adaptability.
-                        <!-- 
-<p>
-    <a href="Sriniwas_Pandey_Resume.pdf" class="btn-download" download>Download     Resume</a>
-</p>
--->
+                        </p>
                     </div>
                 </div>
                 <div class="twitter-widget">
@@ -237,22 +239,22 @@
         </section>
 
         <!-- Contact Section -->
-<section id="contact" class="section bg-light">
-    <div class="container">
-        <h2>Contact</h2>
-        <div class="contact-info">
-            <p><i class="fas fa-map-marker-alt"></i> </p>
-            <p>School of Computing</p>
-            <p>Thomas J. Watson College of Engineering and Applied Science</p>
-            <p>Binghamton University, State University of New York</p>
-            <p>P.O. Box 6000, Binghamton, NY 13902-6000, USA</p>
-            <p><i class="fas fa-phone-alt"></i> Phone: (607) 777-4802</p>
-            <p><i class="fas fa-envelope"></i> Email: <a href="">spandey4 AT binghamton DOT edu</a></p>
-            <p><i class="fab fa-linkedin"></i> LinkedIn: <a href="https://www.linkedin.com/in/sriniwas-pandey/" target="_blank">View Profile</a></p>
-            <a href="mailto:spandey4@binghamton.edu" class="btn-contact">Get in Touch</a> <!-- Optional button -->
-        </div>
-    </div>
-</section>
+        <section id="contact" class="section bg-light">
+            <div class="container">
+                <h2>Contact</h2>
+                <div class="contact-info">
+                    <p><i class="fas fa-map-marker-alt"></i> </p>
+                    <p>School of Computing</p>
+                    <p>Thomas J. Watson College of Engineering and Applied Science</p>
+                    <p>Binghamton University, State University of New York</p>
+                    <p>P.O. Box 6000, Binghamton, NY 13902-6000, USA</p>
+                    <p><i class="fas fa-phone-alt"></i> Phone: (607) 777-4802</p>
+                    <p><i class="fas fa-envelope"></i> Email: <a href="">spandey4 AT binghamton DOT edu</a></p>
+                    <p><i class="fab fa-linkedin"></i> LinkedIn: <a href="https://www.linkedin.com/in/sriniwas-pandey/" target="_blank">View Profile</a></p>
+                    <a href="mailto:spandey4@binghamton.edu" class="btn-contact">Get in Touch</a> <!-- Optional button -->
+                </div>
+            </div>
+        </section>
 
         <!-- Back to Top Button -->
         <a href="#" class="back-to-top"><i class="fas fa-chevron-up"></i></a>
@@ -361,6 +363,18 @@
                         behavior: 'smooth'
                     });
                 });
+            });
+
+            // Mobile Menu Toggle Functionality
+            const menuToggle = document.querySelector('.menu-toggle');
+            const nav = document.querySelector('nav');
+
+            menuToggle.addEventListener('click', function() {
+                nav.classList.toggle('nav-open');
+                // Change icon when menu is open/closed
+                const icon = menuToggle.querySelector('i');
+                icon.classList.toggle('fa-bars');
+                icon.classList.toggle('fa-times');
             });
         });
     </script>
