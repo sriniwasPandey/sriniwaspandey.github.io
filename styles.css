@@ -56,12 +56,14 @@ header {
 
 /* Left Section: Profile Picture */
 .header-left {
-    flex: 0 0 120px; /* Fixed width */
+    flex: 0 0 auto;
     margin-top: 10px; /* Add top margin for spacing */
 }
 
+/* Profile Picture */
 .profile-pic {
     width: 100%;
+    max-width: 120px;
     height: auto;
     border-radius: 10px;
     object-fit: cover;
@@ -88,7 +90,6 @@ header {
 /* Right Section: Navigation Menu */
 .header-right {
     flex: 0 0 auto;
-    align-self: flex-end;
     position: relative;
 }
 
@@ -106,14 +107,13 @@ header {
 @media (max-width: 768px) {
     .menu-toggle {
         display: block;
-    }
-
-    /* Hide the nav by default */
-    nav {
-        width: 100%;
+        position: absolute;
+        top: 15px;
+        right: 20px;
     }
 }
 
+/* Navigation Styles */
 nav {
     position: relative;
 }
@@ -124,7 +124,6 @@ nav ul {
     justify-content: flex-end;
     gap: 20px;
     align-items: center;
-    transition: max-height 0.3s ease-in-out;
 }
 
 nav ul li {
@@ -536,24 +535,40 @@ footer .back-to-top:hover {
 /* Tablets and Small Screens */
 @media (max-width: 1024px) {
     .header-container {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row; /* Change to row */
+        align-items: center;
+        padding: 10px 20px; /* Reduce padding for a smaller header */
     }
 
-    .header-left,
-    .header-right {
-        width: 100%;
+    .header-left {
+        flex: 0 0 auto;
+        margin-right: 10px; /* Space between image and text */
+    }
+
+    .profile-pic {
+        max-width: 80px; /* Adjust size */
     }
 
     .header-center {
+        flex: 1;
         text-align: left;
-        margin: 10px 0;
+        margin: 0; /* Remove margins */
+    }
+
+    .header-center h1 {
+        font-size: 1.5em; /* Adjust font size */
+        margin-bottom: 2px;
+    }
+
+    .header-center p {
+        font-size: 0.9em;
+        margin-bottom: 0;
     }
 
     nav ul {
-        flex-direction: column;
+        flex-direction: row;
         gap: 10px;
-        align-items: flex-start;
+        align-items: center;
     }
 
     .about-container,
@@ -580,49 +595,80 @@ footer .back-to-top:hover {
 
 /* Mobile Devices */
 @media (max-width: 768px) {
-    /* Hide the menu */
-    nav ul {
-        flex-direction: column;
-        max-height: 0;
-        overflow: hidden;
-    }
-
-    /* Show the menu when nav-open class is added */
-    nav.nav-open ul {
-        max-height: 500px; /* Adjust as needed */
-    }
-
     /* Adjust header layout */
     .header-container {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row; /* Ensure row direction */
+        align-items: center;
+        padding: 10px 20px; /* Reduce padding for smaller header */
     }
 
-    .header-left,
-    .header-right {
-        width: 100%;
+    .header-left {
+        flex: 0 0 auto;
+        margin-right: 10px;
+    }
+
+    .profile-pic {
+        width: 50px; /* Reduce size */
+        height: 50px;
+        border-radius: 50%; /* Optional: make circular */
     }
 
     .header-center {
+        flex: 1;
         text-align: left;
-        margin: 10px 0;
+        margin: 0;
     }
 
-    /* Adjust profile picture size */
-    .profile-pic {
-        width: 100px;
-        height: auto;
-        margin-bottom: 10px;
+    .header-center h1 {
+        font-size: 1.2em;
+        margin-bottom: 2px;
     }
 
-    /* Adjust nav styles */
+    .header-center p {
+        font-size: 0.9em;
+        margin-bottom: 0;
+    }
+
+    /* Hide the navigation menu by default on mobile */
+    nav {
+        display: none;
+        width: 100%;
+    }
+
+    /* Show the menu when nav-open class is added */
+    nav.nav-open {
+        display: block;
+    }
+
+    /* Menu Toggle Button */
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 1.5em;
+        cursor: pointer;
+        color: #333;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+    }
+
+    /* Adjust navigation links for mobile */
     nav ul {
+        flex-direction: column;
+        gap: 0;
+        align-items: flex-start;
+        background-color: #f0f4ff;
+        padding: 10px 0;
+    }
+
+    nav ul li {
         width: 100%;
     }
 
     nav ul li a {
         width: 100%;
-        padding: 15px;
+        padding: 15px 20px;
         box-sizing: border-box;
     }
 
@@ -631,17 +677,14 @@ footer .back-to-top:hover {
         position: static;
         background-color: transparent;
         box-shadow: none;
+        padding-left: 20px;
     }
 
     .dropdown-content a {
-        padding-left: 30px;
+        padding: 10px 0;
     }
 
-    .dropdown .dropbtn {
-        width: 100%;
-    }
-
-    /* Ensure caret is visible */
+    /* Ensure caret icon is visible */
     .dropbtn i {
         color: #333;
     }
