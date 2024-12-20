@@ -15,7 +15,7 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #f9f9f9;
-    padding-top: 100px; /* Prevent content from being hidden behind fixed header */
+    padding-top: 120px; /* Prevent content from being hidden behind fixed header */
 }
 
 /* Smooth Scrolling */
@@ -27,10 +27,13 @@ html {
 .container {
     width: 90%;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: auto;
     padding: 20px 0;
 }
-
+.container h2 {margin-bottom: 5px;
+    font-size: 1.1em;
+    color: #555;
+}
 /* ========================================
    2. HEADER & NAVIGATION STYLES
    ======================================== */
@@ -39,101 +42,93 @@ html {
 header {
     background-color: #f0f4ff;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    padding: 10px 0;
+    padding: 20px 0; /* Increased padding for more spacing */
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
-    overflow: hidden;
 }
 
 /* Header Container */
 .header-container {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    padding: 0 10px; 
-    flex-wrap: nowrap; 
+    padding: 0 10px; /* Horizontal padding */
+    gap: 10px
 }
 
 /* Left Section: Profile Picture */
 .header-left {
-    flex: 0 0 auto;
+    flex: 0 0 120px; /* Fixed width */
+    margin-top: 10px; /* Add top margin for spacing */
 }
 
 .profile-pic {
-    width: 80px;
-    height: 80px;
+    width: 100%;
+    height: auto;
     border-radius: 10px;
     object-fit: cover;
-    border: 2px solid #007BFF;
+    border: 3px solid #007BFF;
 }
 
-/* Right Section: Name and Title */
-.header-right {
+/* Center Section: Name and Title */
+.header-center {
+    text-align: left;
     flex: 1;
-    margin-left: 10px;
 }
 
-.header-right h1 {
-    font-size: 1.5em;
+.header-center h1 {
+    font-size: 1.8em;
     color: #007BFF;
     margin-bottom: 5px;
 }
 
-.header-right p {
-    font-size: 0.9em;
+.header-center p {
+    font-size: 1em;
     color: #555;
+}
+
+/* Right Section: Navigation Menu */
+.header-right {
+    flex: 0 0 auto;
+    /*align-self: flex-end;*/
+    position: relative;
 }
 
 /* Menu Toggle Button */
 .menu-toggle {
-    display: none; /* Hidden by default */
+    display: none;
     background: none;
     border: none;
     font-size: 1.5em;
     cursor: pointer;
     color: #333;
-    margin-left: auto;
-    z-index: 1001; /* Ensure it appears above other elements */
 }
 
-/* Show the menu toggle button on small screens */
+/* Show the menu toggle button on mobile */
 @media (max-width: 768px) {
     .menu-toggle {
         display: block;
     }
+
+    /* Hide the nav by default */
+    nav {
+        width: 100%;
+    }
 }
 
-/* Navigation Menu */
 nav {
-    display: none; /* Default hidden */
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: #f0f4ff;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    z-index: 999;
-    transition: max-height 0.3s ease, opacity 0.3s ease; /* Smooth open/close effect */
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
+    position: relative;
 }
 
-/* When nav-open class is added */
-nav.nav-open {
-    display: block !important; /* Force the menu to show */
-    max-height: 500px; /* Set to fit all menu items */
-    opacity: 1;
-}
-
-/* Styles for the navigation menu items */
 nav ul {
     list-style: none;
-    flex-direction: column;
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
     align-items: center;
-    gap: 10px;
-    padding: 20px 0;
+    transition: max-height 0.3s ease-in-out;
 }
 
 nav ul li {
@@ -144,14 +139,13 @@ nav ul li a {
     text-decoration: none;
     color: #333;
     font-weight: 500;
-    padding: 5px 10px;
+    padding: 8px 12px;
     transition: background-color 0.3s, color 0.3s;
-    border-radius: 12px;
+    border-radius: 16px;
     display: flex;
     align-items: center;
-    background-color: #e0f0ff;
-    border: 1px solid #b3d8ff;
-    font-size: 0.9em;
+    background-color: #e0f0ff; /* Light blue background */
+    border: 1px solid #b3d8ff; /* Optional light blue border */
 }
 
 nav ul li a:hover {
@@ -163,7 +157,7 @@ nav ul li a:hover {
 .dropdown .dropbtn {
     cursor: pointer;
     color: #333;
-    font-size: 0.9em;
+    font-size: 1em;
     display: flex;
     align-items: center;
     gap: 5px;
@@ -177,22 +171,21 @@ nav ul li a:hover {
 .dropdown-content {
     display: none;
     position: absolute;
-    top: 100%;
+    top: 100%; /* Position below the dropdown button */
     right: 0;
     background-color: #f9f9f9;
-    min-width: 150px;
-    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     border-radius: 4px;
     z-index: 1;
 }
 
 .dropdown-content a {
     color: #333;
-    padding: 8px 12px;
+    padding: 12px 16px;
     text-decoration: none;
     display: block;
     transition: background-color 0.3s;
-    font-size: 0.9em;
 }
 
 .dropdown-content a:hover {
@@ -204,30 +197,13 @@ nav ul li a:hover {
     display: block;
 }
 
-/* Make sure nav is visible in desktop view */
-@media (min-width: 769px) {
-    nav {
-        display: flex;
-        position: static;
-        width: auto;
-        box-shadow: none;
-        max-height: none;
-        opacity: 1;
-    }
-
-    nav ul {
-        flex-direction: row;
-        gap: 20px;
-    }
-}
-
 /* ========================================
    3. MAIN CONTENT STYLES
    ======================================== */
 
 /* Sections Styling */
 .section {
-    padding: 50px 0;
+    padding: 50px 0; /* Adjusted top padding since body has padding-top */
 }
 
 .bg-light {
@@ -237,43 +213,40 @@ nav ul li a:hover {
 /* About Section */
 .about-container {
     display: flex;
-    gap: 20px;
+    gap: 10px;
     flex-wrap: wrap;
 }
 
 .about-me {
-    flex: 3;
-    min-width: 280px;
+    flex: 3; /* Approximately 75% width */
 }
 
 .twitter-widget {
-    flex: 1;
-    min-width: 280px;
+    flex: 1; /* Approximately 25% width */
 }
 
 .about-me h2,
 .twitter-widget h2 {
-    font-size: 1.8em;
-    margin-bottom: 15px;
+    font-size: 2em;
+    margin-bottom: 20px;
     color: #007BFF;
 }
 
 .about-me .content-box p {
-    margin-bottom: 10px;
-    font-size: 1em;
+    margin-bottom: 5px;
+    font-size: 1.1em;
     color: #555;
 }
 
 .btn-download {
     display: inline-block;
-    padding: 8px 16px;
+    padding: 10px 20px;
     background-color: #007BFF;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s;
-    margin-top: 15px;
-    font-size: 0.9em;
+    margin-top: 10px;
 }
 
 .btn-download:hover {
@@ -291,39 +264,39 @@ nav ul li a:hover {
 /* Multi-Section Layout for Education, Research, Teaching */
 .multi-section {
     display: flex;
-    gap: 15px;
+    gap: 10px;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
 .collapsible-section {
     flex: 1;
-    min-width: 280px;
+    min-width: 300px;
     background-color: #fff;
-    padding: 15px;
+    padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     cursor: pointer;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .collapsible-section:hover {
-    transform: translateY(-3px);
+    transform: translateY(-5px);
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 .collapsible-section h2 {
-    font-size: 1.6em;
+    font-size: 1.8em;
     color: #007BFF;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .collapsible-section .card {
     background-color: #fff;
-    padding: 10px;
+    padding: 15px;
     border-radius: 8px;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     box-shadow: 0 1px 4px rgba(0,0,0,0.1);
     cursor: pointer;
     transition: background-color 0.3s;
@@ -335,23 +308,22 @@ nav ul li a:hover {
 
 .collapsible-section .card h3 {
     color: #007BFF;
-    margin-bottom: 8px;
-    font-size: 1.2em;
+    margin-bottom: 10px;
 }
 
 .collapsible-section .card p {
     color: #555;
-    font-size: 0.9em;
+    font-size: 1em;
 }
 
 .collapsible-section .card ul {
     list-style: disc inside;
-    margin-top: 8px;
+    margin-top: 10px;
 }
 
 .collapsible-section .card ul li {
-    margin-bottom: 8px;
-    font-size: 0.9em;
+    margin-bottom: 10px;
+    font-size: 0.95em;
     color: #555;
 }
 
@@ -361,45 +333,117 @@ nav ul li a:hover {
     transition: all 0.3s ease;
 }
 
-/* ========================================
-    Contact and Footer Styles
-   ======================================== */
+/* Publications Section */
+#publications ul {
+    list-style: disc inside;
+    margin-top: 10px;
+}
 
+#publications li {
+    margin-bottom: 10px;
+    font-size: 1em;
+    color: #555;
+}
+
+/* Professional Engagements, Professional Experience, Honors & Awards Sections */
+.professional-engagements-container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.professional-engagements-container .sub-section {
+    flex: 1;
+    min-width: 300px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-bottom: 10px;
+}
+
+.professional-engagements-container .sub-section h2 {
+    font-size: 1.8em;
+    margin-bottom: 2px;
+    color: #007BFF;
+}
+
+.professional-engagements-container .sub-section ul {
+    list-style: disc inside;
+    margin-top: 10px;
+}
+
+.professional-engagements-container .sub-section ul li {
+    margin-bottom: 10px;
+    font-size: 1em;
+    color: #555;
+}
+
+/* Skills Section */
+.skills-container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.skills-container .skill {
+    flex: 1;
+    min-width: 300px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.skills-container .skill h3 {
+    color: #007BFF;
+    margin-bottom: 10px;
+}
+
+.skills-container .skill p {
+    color: #555;
+    font-size: 1em;
+}
+
+/* Contact Section */
 #contact {
-    background-color: #f0f4ff;
+    background-color: #f0f4ff; /* Light tone to match the header background */
     padding: 20px 0;
 }
 
 #contact h2 {
-    font-size: 1.8em;
-    color: #007BFF;
+    font-size: 2em;
+    color: #007BFF; /* Blue theme color for consistency */
     text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .contact-info {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px; /* Increased spacing for better readability */
     align-items: center;
     background-color: #fff;
-    padding: 15px;
+    padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    max-width: 800px;
-    margin: 0 auto;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Card-like effect */
+    max-width: 800px; /* Limiting width for better layout */
+    margin: 0 auto; /* Center the content */
 }
 
 .contact-info p {
     display: flex;
     align-items: center;
-    gap: 5px;
-    font-size: 0.9em;
+    gap: 8px;
+    font-size: 1em; /* Slightly larger text */
     color: #333;
 }
 
 .contact-info p i {
-    color: #007BFF;
+    color: #007BFF; /* Theme color for icons */
 }
 
 .contact-info a {
@@ -410,21 +454,20 @@ nav ul li a:hover {
 }
 
 .contact-info a:hover {
-    color: #0056b3;
+    color: #0056b3; /* Darker hover effect */
 }
 
-/* Button in Contact Section */
+/* Optional - Add a call to action button in the contact section */
 .contact-info .btn-contact {
-    margin-top: 20px;
+    margin-top: 30px;
     display: inline-block;
-    padding: 10px 20px;
+    padding: 12px 25px;
     background-color: #007BFF;
     color: #fff;
     text-decoration: none;
     font-weight: 500;
     border-radius: 5px;
     transition: background-color 0.3s;
-    font-size: 0.9em;
 }
 
 .contact-info .btn-contact:hover {
@@ -435,18 +478,19 @@ nav ul li a:hover {
    4. BACK TO TOP BUTTON STYLES
    ======================================== */
 
+/* Back to Top Button */
 .back-to-top {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 30px;
+    right: 30px;
     background-color: #007BFF;
     color: #fff;
-    padding: 8px 10px;
+    padding: 10px 12px;
     border-radius: 50%;
     text-align: center;
     text-decoration: none;
     font-size: 1.2em;
-    display: none;
+    display: none; /* Hidden by default */
     transition: background-color 0.3s, opacity 0.3s;
     z-index: 1000;
 }
@@ -464,22 +508,22 @@ footer {
     background-color: #001f3f;
     color: #fff;
     text-align: center;
-    padding: 15px 0;
+    padding: 20px 0;
 }
 
 footer p {
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
 footer .back-to-top {
     background-color: #007BFF;
     color: #fff;
-    padding: 8px 10px;
+    padding: 10px 12px;
     border-radius: 50%;
     text-align: center;
     text-decoration: none;
     font-size: 1.2em;
-    display: none;
+    display: none; /* Hidden by default */
     transition: background-color 0.3s, opacity 0.3s;
 }
 
@@ -493,33 +537,44 @@ footer .back-to-top:hover {
    6. RESPONSIVE DESIGN
    ======================================== */
 
-/* Mobile Devices */
-@media (max-width: 600px) {
+/* Tablets and Small Screens */
+@media (max-width: 1024px) {
     .header-container {
-        flex-wrap: nowrap;
+        flex-direction: row;
+        align-items: flex-start;
     }
 
+    .header-left,
+    .header-right {
+        width: 100%;
+    }
+
+    .header-center {
+        text-align: left;
+        margin: 10px 0;
+    }
+
+.header-center h1 {
+    font-size: 1.8em;
+    color: #007BFF;
+    margin-bottom: 5px;
+}
+
+.header-center p {
+    font-size: 1em;
+    color: #555;
+}
+/* Adjust profile picture size */
     .profile-pic {
-        width: 60px;
-        height: 60px;
-    }
-
-    .header-right h1 {
-        font-size: 1.2em;
-    }
-
-    .header-right p {
-        font-size: 0.8em;
+        width: 100px;
+        height: auto;
+        margin-bottom: 10px;
     }
 
     nav ul {
-        flex-wrap: wrap;
-    }
-
-    nav ul li a {
-        font-size: 0.8em;
-        padding: 5px 8px;
-        text-align: center;
+        flex-direction: row;
+        gap: 10px;
+        align-items: flex-start;
     }
 
     .about-container,
@@ -530,8 +585,8 @@ footer .back-to-top:hover {
     }
 
     .twitter-widget {
-        flex: 1 1 100%;
-        max-width: 100%;
+        width: 100%;
+        margin-top: 20px;
     }
 
     .collapsible-section {
@@ -544,7 +599,103 @@ footer .back-to-top:hover {
     }
 }
 
+/* Mobile Devices */
+@media (max-width: 768px) {
+    /* Hide the menu */
+    nav ul {
+        flex-direction: column;
+        max-height: 0;
+        overflow: hidden;
+    }
+
+    /* Show the menu when nav-open class is added */
+    nav.nav-open ul {
+        max-height: 500px; /* Adjust as needed */
+    }
+
+    /* Adjust header layout */
+    .header-container {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .header-left,
+    .header-right {
+        width: 100%;
+    }
+
+    .header-center {
+        text-align: left;
+        margin: 10px 0;
+    }
+
+.header-center h1 {
+    font-size: 1.5em;
+    color: #007BFF;
+    margin-bottom: 5px;
+}
+
+.header-center p {
+    font-size: 0.8em;
+    color: #555;
+}
+
+    /* Adjust profile picture size */
+    .profile-pic {
+        width: 100px;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    /* Adjust nav styles */
+    nav ul {
+        width: 100%;
+    }
+
+    nav ul li a {
+        width: 100%;
+        padding: 15px;
+        box-sizing: border-box;
+    }
+
+    /* Adjust dropdown content */
+    .dropdown-content {
+        position: static;
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+    .dropdown-content a {
+        padding-left: 30px;
+    }
+
+    .dropdown .dropbtn {
+        width: 100%;
+    }
+
+    /* Ensure caret is visible */
+    .dropbtn i {
+        color: #333;
+    }
+
+    /* Adjust collapsible sections */
+    .collapsible-section {
+        width: 100%;
+    }
+
+    .professional-engagements-container .sub-section,
+    .skills-container .skill {
+        width: 100%;
+    }
+}
+
+/* ========================================
+   7. SCROLL MARGIN FOR SECTIONS
+   ======================================== */
+
 /* Scroll Margin to Account for Fixed Header */
 section {
-    scroll-margin-top: 100px;
+    scroll-margin-top: 120px; /* Adjust based on header height */
 }
+
+Here is the CSS.
