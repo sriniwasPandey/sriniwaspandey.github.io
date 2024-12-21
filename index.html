@@ -26,12 +26,13 @@
                 <h1>Sriniwas Pandey</h1>
                 <p>Lecturer, Computer Science<br>Binghamton University</p>
             </div>
-
+	
+	<div class-"header-right">
             <!-- Menu Toggle Button -->
             <button class="menu-toggle" aria-label="Open Menu">
                 <i class="fas fa-bars"></i>
             </button>
-        </div>
+        
         <!-- Navigation Menu -->
         <nav>
             <ul>
@@ -53,6 +54,7 @@
                 </li>
             </ul>
         </nav>
+</div>
     </header>
 
     <!-- Main Content -->
@@ -73,7 +75,8 @@
                 </div>
                 <div class="twitter-widget">
                     <h2>From X</h2>
-                    <a class="twitter-timeline" href="https://twitter.com/solicitous_sri?ref_src=twsrc%5Etfw">Tweets by solicitous_sri</a> 
+                    <a class="twitter-timeline" href="https://twitter.com/solicitous_sri?ref_src=twsrc%5Etfw"
+       data-height="300">Tweets by solicitous_sri</a> 
                     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                 </div>
             </div>
@@ -266,113 +269,129 @@
 
     <!-- JavaScript -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Dropdown Menu Functionality
-            const dropdowns = document.querySelectorAll('.dropdown');
+    document.addEventListener('DOMContentLoaded', function() {
+        // Dropdown Menu Functionality
+        const dropdowns = document.querySelectorAll('.dropdown');
 
-            dropdowns.forEach(dropdown => {
-                const dropbtn = dropdown.querySelector('.dropbtn');
-                const dropdownContent = dropdown.querySelector('.dropdown-content');
+        dropdowns.forEach(dropdown => {
+            const dropbtn = dropdown.querySelector('.dropbtn');
+            const dropdownContent = dropdown.querySelector('.dropdown-content');
 
-                // Toggle dropdown on click
-                dropbtn.addEventListener('click', function(event) {
-                    event.preventDefault(); // Prevent default link behavior
-                    dropdownContent.classList.toggle('show');
-                });
-            });
-
-            // Close the dropdown if the user clicks outside of it
-            window.addEventListener('click', function(event) {
-                dropdowns.forEach(dropdown => {
-                    if (!dropdown.contains(event.target)) {
-                        const dropdownContent = dropdown.querySelector('.dropdown-content');
-                        dropdownContent.classList.remove('show');
-                    }
-                });
-            });
-
-            // Collapsible Sections Functionality
-            const toggleCards = document.querySelectorAll('.toggle-card');
-
-            toggleCards.forEach(card => {
-                card.addEventListener('click', function() {
-                    const parentSection = this.parentElement;
-                    const hiddenCards = parentSection.querySelectorAll('.hidden');
-
-                    // Toggle visibility of hidden cards
-                    hiddenCards.forEach(hiddenCard => {
-                        hiddenCard.classList.toggle('hidden');
-                    });
-
-                    // Optional: Toggle an 'active' class for styling
-                    this.classList.toggle('active');
-                });
-            });
-
-            // Smooth Scroll Adjustment
-            const navLinks = document.querySelectorAll('nav ul li a[href^="#"]');
-
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(event) {
-                    event.preventDefault(); // Prevent default anchor behavior
-
-                    const targetId = this.getAttribute('href').substring(1);
-                    const targetSection = document.getElementById(targetId);
-
-                    if (targetSection) {
-                        const headerOffset = document.querySelector('header').offsetHeight;
-                        const elementPosition = targetSection.getBoundingClientRect().top;
-                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset + 10; // Added slight padding
-
-                        window.scrollTo({
-                            top: offsetPosition,
-                            behavior: 'smooth'
-                        });
-
-                        // Close any open dropdowns after clicking a link
-                        dropdowns.forEach(dropdown => {
-                            const dropdownContent = dropdown.querySelector('.dropdown-content');
-                            dropdownContent.classList.remove('show');
-                        });
-                    }
-                });
-            });
-
-            // Back to Top Button Functionality
-            const backToTopButtons = document.querySelectorAll('.back-to-top');
-
-            window.addEventListener('scroll', function() {
-                backToTopButtons.forEach(button => {
-                    if (window.pageYOffset > 300) { // Show after scrolling down 300px
-                        button.style.display = 'block';
-                    } else {
-                        button.style.display = 'none';
-                    }
-                });
-            });
-
-            backToTopButtons.forEach(button => {
-                button.addEventListener('click', function(event) {
-                    event.preventDefault();
-                    window.scrollTo({
-                        top: 0,
-                        behavior: 'smooth'
-                    });
-                });
-            });
-
-            // Mobile Menu Toggle Functionality
-            const menuToggle = document.querySelector('.menu-toggle');
-            const nav = document.querySelector('nav');
-
-            menuToggle.addEventListener('click', function() {
-                nav.classList.toggle('nav-open');
-                // Change icon when menu is open/closed
-                const icon = menuToggle.querySelector('i');
-                icon.classList.toggle('fa-bars');
-                icon.classList.toggle('fa-times');
+            // Toggle dropdown on click
+            dropbtn.addEventListener('click', function(event) {
+                event.preventDefault(); // Prevent default link behavior
+                dropdownContent.classList.toggle('show');
             });
         });
-    </script>
+
+        // Close the dropdown if the user clicks outside of it
+        window.addEventListener('click', function(event) {
+            dropdowns.forEach(dropdown => {
+                if (!dropdown.contains(event.target)) {
+                    const dropdownContent = dropdown.querySelector('.dropdown-content');
+                    dropdownContent.classList.remove('show');
+                }
+            });
+        });
+
+        // Collapsible Sections Functionality
+        const toggleCards = document.querySelectorAll('.toggle-card');
+
+        toggleCards.forEach(card => {
+            card.addEventListener('click', function() {
+                const parentSection = this.parentElement;
+                const hiddenCards = parentSection.querySelectorAll('.hidden');
+
+                // Toggle visibility of hidden cards
+                hiddenCards.forEach(hiddenCard => {
+                    hiddenCard.classList.toggle('hidden');
+                });
+
+                // Optional: Toggle an 'active' class for styling
+                this.classList.toggle('active');
+            });
+        });
+
+        // Smooth Scroll Adjustment
+        const navLinks = document.querySelectorAll('nav ul li a[href^="#"]');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault(); // Prevent default anchor behavior
+
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+
+                if (targetSection) {
+                    const headerOffset = document.querySelector('header').offsetHeight;
+                    const elementPosition = targetSection.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset + 10; // Added slight padding
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+
+                    // Close any open dropdowns after clicking a link
+                    dropdowns.forEach(dropdown => {
+                        const dropdownContent = dropdown.querySelector('.dropdown-content');
+                        dropdownContent.classList.remove('show');
+                    });
+
+                    // Collapse the mobile menu after clicking a link
+                    nav.classList.remove('nav-open');
+                    const icon = menuToggle.querySelector('i');
+                    icon.classList.add('fa-bars');
+                    icon.classList.remove('fa-times');
+                }
+            });
+        });
+
+        // Back to Top Button Functionality
+        const backToTopButtons = document.querySelectorAll('.back-to-top');
+
+        window.addEventListener('scroll', function() {
+            backToTopButtons.forEach(button => {
+                if (window.pageYOffset > 300) { // Show after scrolling down 300px
+                    button.style.display = 'block';
+                } else {
+                    button.style.display = 'none';
+                }
+            });
+        });
+
+        backToTopButtons.forEach(button => {
+            button.addEventListener('click', function(event) {
+                event.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Mobile Menu Toggle Functionality
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('nav');
+
+        menuToggle.addEventListener('click', function() {
+            nav.classList.toggle('nav-open');
+            // Change icon when menu is open/closed
+            const icon = menuToggle.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        // Collapse the mobile menu when clicking outside
+        window.addEventListener('click', function(event) {
+            if (!nav.contains(event.target) && !menuToggle.contains(event.target)) {
+                nav.classList.remove('nav-open');
+                const icon = menuToggle.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
+            }
+        });
+    });
+</script>
 </body>
 </html>
