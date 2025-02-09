@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sriniwas Pandey - Academic Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="header-left">
+                <img src="Pandey_Sriniwas-01.jpeg" alt="Profile Picture of Sriniwas Pandey" class="profile-pic">
+            </div>
+            <div class="header-center">
+                <h1>Sriniwas Pandey</h1>
+                <p>Lecturer, Computer Science<br>Binghamton University</p>
+            </div>
+            <button class="menu-toggle" aria-label="Open Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#teaching">Teaching</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">
+                        More <i class="fas fa-caret-down"></i>
+                    </a>
+                    <div class="dropdown-content">
+                        <a href="#professional-engagements">Professional Engagements</a>
+                        <a href="#honors-awards">Honors & Awards</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="about" class="section">
+            <div class="container about-container">
+                <div class="about-me">
+                    <h2>About Me</h2>
+                    <p>I am Sriniwas Pandey, a Lecturer in Computer Science at Binghamton University...</p>
+                </div>
+                <div class="twitter-widget">
+                    <h2>From X</h2>
+                    <a class="twitter-timeline" href="https://twitter.com/solicitous_sri">Tweets by solicitous_sri</a>
+                    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Sriniwas Pandey. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', () => {
+            document.querySelector('nav ul').classList.toggle('nav-open');
+        });
+    </script>
+</body>
+</html>
